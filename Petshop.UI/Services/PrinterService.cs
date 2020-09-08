@@ -604,7 +604,11 @@ namespace PetShop.UI.Services
         private void SortPetsByPrice()
         {
             var list = petService.SortAllPetsByPrice();
-
+            foreach (var item in list)
+            {
+                Console.WriteLine($"id:{item.Id} name:{item.Name} price: {item.price}");
+            }
+            Console.WriteLine();
         }
 
         private void DeletePet()
@@ -621,7 +625,7 @@ namespace PetShop.UI.Services
             var list = petService.GetFiveCheapestPet();
             foreach (var item in list)
             {
-                Console.WriteLine($"id:{item.Id} name:{item.Name}");
+                Console.WriteLine($"id:{item.Id} name:{item.Name} price: {item.price}");
             }
             Console.WriteLine();
         }
